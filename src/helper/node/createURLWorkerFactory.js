@@ -2,6 +2,6 @@ import {WorkerClass} from '\0rollup-plugin-web-worker-loader::helper::node::Work
 
 export function createURLWorkerFactory(url) {
     return function WorkerFactory(options) {
-        return new WorkerClass(url, options);
+        return new WorkerClass((options.loadPath || '') + url, options);
     };
 }
